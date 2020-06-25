@@ -97,9 +97,9 @@ footer a .icons {
   display: -ms-grid;
   display: grid;
   grid-gap: 3px;
-  -ms-grid-rows: (110px)[5];
+  -ms-grid-rows: "(110px)[5]";
       grid-template-rows: repeat(5, 110px);
-  -ms-grid-columns: (1fr)[5];
+  -ms-grid-columns: "(1fr)[5]";
       grid-template-columns: repeat(5, 1fr);
   text-transform: uppercase;
 }
@@ -192,7 +192,7 @@ footer a .icons {
     padding: 20px;
   }
   .bingo-card {
-    -ms-grid-rows: (auto)[24];
+    -ms-grid-rows: "(auto)[24]";
         grid-template-rows: repeat(24, auto);
     -ms-grid-columns: auto;
         grid-template-columns: auto;
