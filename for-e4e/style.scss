@@ -4,13 +4,14 @@ $yellow-light: #f9f59e;
 $yellow: #fbda7d;
 $yellow-dark: #f7d75c;
 $orange: #fdb90b;
-$blueish: #f2ae00;
+$blueish: #bdfffc;
 $brown: #dd8a34;
 $green: #0dc4ab;
 $green-light: #1cb8ab;
 $green-dark: #6ae0c7;
 $blue: #198b85;
-$blue-ish: #197e8b;
+$blue-ish: #1fc0ab;
+
 
 
 * {
@@ -72,6 +73,45 @@ footer {
 	margin: 4em auto 0;
 	overflow: hidden;
 }
+@media screen and (min-width: 601px){
+	.name{
+		margin: 5% 30%;
+		label{
+			font: 700 20px 'Nunito', sans-serif;
+			padding: 1em;
+			margin-bottom: 1em;
+			color: $blue;
+		}
+		input{
+			width: 12em;
+			height: 2em;
+			border: 2px dotted;
+			color: $blue;
+			font: 700 20px 'Nunito', sans-serif;
+			text-orientation: center;
+		}
+	}
+}
+
+@media screen and (max-width: 600px){
+	.name{
+		margin: 15% 15%;
+		label{
+			font: 700 20px 'Nunito', sans-serif;
+			padding: 1em;
+			margin-bottom: 1em;
+			color: $blue;
+		}
+		input{
+			width: 12em;
+			height: 2em;
+			border: 2px dotted;
+			color: $blue;
+			font: 700 20px 'Nunito', sans-serif;
+			text-orientation: center;
+		}
+	}
+}
 
 .title {
 	background: $blue;
@@ -116,19 +156,18 @@ footer {
 		line-height: 1.35;
 		user-select: none;
 		&:after {
-			content: "-";
+			content: "x";
 			position: absolute;
-			top: -28%;
-			left: -30%;
-			color: $green;
-			width: 100%;
+			top: 25%;
+			left: 25%;
+			color: $blueish;
+			width: 50%;
 			opacity: 0;
 			transition: 0.1s ease;
 			height: 0;
 			pointer-events: none;
-			font: 280px/0.5 "Caveat Brush", cursive;
+			font: 100px/0.5 "Caveat Brush", cursive;
 			text-align: center;
-			transform: rotate(-45deg);
 		}
 		&.active:after {
 			height: 100%;
@@ -165,7 +204,21 @@ footer {
 	color: $blue;
 	padding: 8px 10px;
 	&:hover {
-		color: $blueish;
+		color: $blue-ish;
+	}
+}
+
+.save-button {
+	margin: 2em 0 0;
+	font: 700 16px 'Nunito', sans-serif;
+	text-transform: uppercase;
+	cursor: pointer;
+	display: inline-block;
+	border: 2px dotted;
+	color: $blue;
+	padding: 8px 10px;
+	&:hover {
+		color: $blue-ish;
 	}
 }
 
