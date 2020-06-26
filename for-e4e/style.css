@@ -66,6 +66,46 @@ footer a .icons {
   overflow: hidden;
 }
 
+@media screen and (min-width: 601px) {
+  .name {
+    margin: 5% 30%;
+  }
+  .name label {
+    font: 700 20px 'Nunito', sans-serif;
+    padding: 1em;
+    margin-bottom: 1em;
+    color: #198b85;
+  }
+  .name input {
+    width: 12em;
+    height: 2em;
+    border: 2px dotted;
+    color: #198b85;
+    font: 700 20px 'Nunito', sans-serif;
+    text-orientation: center;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .name {
+    margin: 15% 15%;
+  }
+  .name label {
+    font: 700 20px 'Nunito', sans-serif;
+    padding: 1em;
+    margin-bottom: 1em;
+    color: #198b85;
+  }
+  .name input {
+    width: 12em;
+    height: 2em;
+    border: 2px dotted;
+    color: #198b85;
+    font: 700 20px 'Nunito', sans-serif;
+    text-orientation: center;
+  }
+}
+
 .title {
   background: #198b85;
   color: #fff;
@@ -98,9 +138,9 @@ footer a .icons {
   display: -ms-grid;
   display: grid;
   grid-gap: 3px;
-  -ms-grid-rows: "(110px)[5]";
+  -ms-grid-rows: (110px)[5];
       grid-template-rows: repeat(5, 110px);
-  -ms-grid-columns: "(1fr)[5]";
+  -ms-grid-columns: (1fr)[5];
       grid-template-columns: repeat(5, 1fr);
   text-transform: uppercase;
 }
@@ -128,21 +168,19 @@ footer a .icons {
 }
 
 .bingo-card__item:after {
-  content: "-";
+  content: "x";
   position: absolute;
-  top: -28%;
-  left: -30%;
-  color: #0dc4ab;
-  width: 100%;
+  top: 25%;
+  left: 25%;
+  color: #bdfffc;
+  width: 50%;
   opacity: 0;
   -webkit-transition: 0.1s ease;
   transition: 0.1s ease;
   height: 0;
   pointer-events: none;
-  font: 280px/0.5 "Caveat Brush", cursive;
+  font: 100px/0.5 "Caveat Brush", cursive;
   text-align: center;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
 }
 
 .bingo-card__item.active:after {
@@ -180,7 +218,22 @@ footer a .icons {
 }
 
 .clear-button:hover {
-  color: #f2ae00;
+  color: #1fc0ab;
+}
+
+.save-button {
+  margin: 2em 0 0;
+  font: 700 16px 'Nunito', sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  border: 2px dotted;
+  color: #198b85;
+  padding: 8px 10px;
+}
+
+.save-button:hover {
+  color: #1fc0ab;
 }
 
 @media screen and (max-width: 600px) {
@@ -193,7 +246,7 @@ footer a .icons {
     padding: 20px;
   }
   .bingo-card {
-    -ms-grid-rows: "(auto)[24]";
+    -ms-grid-rows: (auto)[24];
         grid-template-rows: repeat(24, auto);
     -ms-grid-columns: auto;
         grid-template-columns: auto;
