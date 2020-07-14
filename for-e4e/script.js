@@ -44,6 +44,7 @@ savebtn.onclick = () => {
   Sheetsu.write("https://sheetsu.com/apis/v1.0bu/ff26f7713e1e", data, {}, successFunc);
 
   console.log(r, name, selected)
+  selected = []
 }
 
   /*
