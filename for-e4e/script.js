@@ -1,4 +1,3 @@
-
 /*
 *
 **
@@ -191,7 +190,7 @@ function createModal(container) {
 var CLIENT_ID = '478863341573-11mjgcu5jei7ku27e6g79st752m0au3b.apps.googleusercontent.com';
 var API_KEY = 'AIzaSyChCGRrcikcvBAF0854nOa2f8ITo8Vvvhk';
 
-// Array of API discovery doc URLs for APIs used by the quickstart
+// Array of API discovery doc URLs for APIs used by the Bingo
 var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"];
 
 // Authorization scopes required by the API; multiple scopes can be
@@ -236,7 +235,9 @@ function initClient() {
  *  appropriately. After a sign-in, the API is called.
  */
 function updateSigninStatus(isSignedIn) {
+  console.clear()
   if (isSignedIn) {
+    
     console.log("GAPI client loaded for API");
   } else {
     console.error("Error loading GAPI client for API", err);
