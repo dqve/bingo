@@ -44,7 +44,7 @@ function downloadURI(uri, name) {
 }
 
 function download(){
-    html2canvas(document.querySelector("body")).then(canvas => {
+    html2canvas(document.querySelector("body"), backgroundColor="null").then(canvas => {
     image = canvas.toDataURL("image/png");
     downloadURI("data:" + image, "yourImage.png");
 });
@@ -227,11 +227,11 @@ function initClient() {
     // Handle the initial sign-in state.
     updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
   }, function(error) {
-    appendPre(JSON.stringify(error, null, 2));
+    console.log(JSON.stringify(error, null, 2));
   });
 }
 
-/**
+/** 
  *  Called when the signed in status changes, to update the UI
  *  appropriately. After a sign-in, the API is called.
  */
