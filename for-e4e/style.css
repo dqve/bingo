@@ -86,7 +86,27 @@ footer a .icons {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 301px) and (max-width: 600px) {
+  .name {
+    margin: 5% 25%;
+  }
+  .name label {
+    font: 700 20px 'Nunito', sans-serif;
+    padding: 1em;
+    margin-bottom: 1em;
+    color: #198b85;
+  }
+  .name input {
+    width: 12em;
+    height: 2em;
+    border: 2px dotted;
+    color: #198b85;
+    font: 700 20px 'Nunito', sans-serif;
+    text-orientation: center;
+  }
+}
+
+@media screen and (max-width: 300px) {
   .name {
     margin: 15% 15%;
   }
@@ -123,7 +143,7 @@ footer a .icons {
   display: block;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 300px) {
   .title span:nth-child(1) {
     display: none;
   }
@@ -140,8 +160,8 @@ footer a .icons {
   grid-gap: 3px;
   -ms-grid-rows: (110px)[5];
       grid-template-rows: repeat(5, 110px);
-  -ms-grid-columns: (1fr)[5];
-      grid-template-columns: repeat(5, 1fr);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
   text-transform: uppercase;
 }
 
@@ -236,7 +256,7 @@ footer a .icons {
   color: #1fc0ab;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 300px) {
   .main-content {
     max-width: none;
     margin: 0;
