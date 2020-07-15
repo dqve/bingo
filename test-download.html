@@ -7,23 +7,37 @@ div {
     background-color: #2C7CC3;
 }
 </style>
-<script type="text/javascript" src="html2canvas.js"></script>
-<script type="text/javascript" src="jquery-1.9.1.js"></script>
+<script type="text/javascript" src="http://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 <script language="javascript">
-$(document).ready(function() {
-//var testdiv = document.getElementById("testdiv");
-    html2canvas($("#testdiv"), {
-        onrendered: function(canvas) {
-            // canvas is the final rendered <canvas> element
-            var myImage = canvas.toDataURL("image/png");
-            window.open(myImage);
-        }
-    });
+let image = ""
+
+function downloadURI(uri, name) {
+    var link = document.createElement("a");
+
+    link.download = name;
+    link.href = uri;
+    document.body.appendChild(link);
+    link.click();
+    console.log("done")   
+    //after creating link you should delete dynamic link
+    //clearDynamicLink(link); 
+}
+
+function loose(){
+    html2canvas(document.querySelector("#capture")).then(canvas => {
+    document.body.appendChild(canvas)
+    image = canvas.toDataURL("image/png");
+    downloadURI("data:" + image, "yourImage.png");
 });
+}
+
 </script>
 </head>
 <body>
 <div id="testdiv">
+    <div id="capture" style="padding: 10px; background: #f5da55">
+        <h4 style="color: #000; ">Hello world!</h4>
+    </div>
 </div>
 </body>
 </html>
