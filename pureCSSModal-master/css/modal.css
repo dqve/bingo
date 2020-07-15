@@ -10,7 +10,7 @@ p {
   left: 50%;
   padding: 20px;
   border-radius: 5px;
-
+  display: none;
   -webkit-transform: translate(-50%, -200%);
   -ms-transform: translate(-50%, -200%);
   transform: translate(-50%, -200%);
@@ -26,8 +26,6 @@ p {
   background-color: rgba(0,0,0,.8);
   top: 0;
   left: 0;
-  height: 100%;
-  width: 100%;
 }
 
 .modal:target:before {
@@ -35,11 +33,13 @@ p {
 }
 
 .modal:target .modal-container {
-  top: 20%;
+  top: 35%;
 
   -webkit-transform: translate(-50%, 0%);
   -ms-transform: translate(-50%, 0%);
   transform: translate(-50%, 0%);
 }
 
-#modal-close {}
+#modal-close {
+  display: none;
+}
