@@ -92,8 +92,26 @@ footer {
 		}
 	}
 }
-
-@media screen and (max-width: 600px){
+@media screen and (min-width: 301px) and (max-width: 600px){
+	.name{
+		margin: 5% 25%;
+		label{
+			font: 700 20px 'Nunito', sans-serif;
+			padding: 1em;
+			margin-bottom: 1em;
+			color: $blue;
+		}
+		input{
+			width: 12em;
+			height: 2em;
+			border: 2px dotted;
+			color: $blue;
+			font: 700 20px 'Nunito', sans-serif;
+			text-orientation: center;
+		}
+	}
+}
+@media screen and (max-width: 300px){
 	.name{
 		margin: 15% 15%;
 		label{
@@ -125,7 +143,7 @@ footer {
 		&:nth-child(1) {
 			display: block;
 		}
-		@media screen and (max-width: 600px) {
+		@media screen and (max-width: 300px) {
 			&:nth-child(1) {
 				display: none;
 			}
@@ -142,7 +160,7 @@ footer {
 	display: grid;
 	grid-gap: 3px;
 	grid-template-rows: repeat(5, 110px);
-	grid-template-columns: repeat(5, 1fr);
+	grid-template-columns: repeat(3, 1fr);
 	text-transform: uppercase;
 	&__item {
 		background: $green-light;
@@ -222,7 +240,7 @@ footer {
 	}
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 300px) {
 	.main-content {
 		max-width: none;
 		margin: 0;
