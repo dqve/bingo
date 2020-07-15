@@ -6,27 +6,34 @@
   </head>
   <body>
     <p>Google Sheets API Quickstart</p>
-
     <!--Add buttons to initiate auth sequence and sign out-->
     <button id="authorize_button" style="display: none;">Authorize</button>
     <button id="signout_button" style="display: none;">Sign Out</button>
-
+    <input type="text" id="one">
+    <input type="text" id="two">
+    <input type="button" value="submit" id="submit">
     <pre id="content" style="white-space: pre-wrap;"></pre>
 
     <script type="text/javascript">
       // Client ID and API key from the Developer Console
-      var CLIENT_ID = '839926918285-9bejuo3ffsnqtcc5arjqqiak0j7rhsl1.apps.googleusercontent.com';
-      var API_KEY = 'AIzaSyDEZUrtKzBoQlTranBFoA3bNqK1j0wBR-k';
+      var CLIENT_ID = '478863341573-11mjgcu5jei7ku27e6g79st752m0au3b.apps.googleusercontent.com';
+      var API_KEY = 'AIzaSyChCGRrcikcvBAF0854nOa2f8ITo8Vvvhk';
 
       // Array of API discovery doc URLs for APIs used by the quickstart
       var DISCOVERY_DOCS = ["https://sheets.googleapis.com/$discovery/rest?version=v4"];
 
       // Authorization scopes required by the API; multiple scopes can be
       // included, separated by spaces.
-      var SCOPES = "https://www.googleapis.com/auth/spreadsheets.readonly";
+      var SCOPES = "https://www.googleapis.com/auth/spreadsheets";
 
       var authorizeButton = document.getElementById('authorize_button');
       var signoutButton = document.getElementById('signout_button');
+      var sumbit = document.getElementById('submit');
+      var one = document.getElementById('one');
+      var two = document.getElementById('two');
+
+      const mySpreadsheetId = '1lLPYo2ysqbcNaocM2DRiwFf0SD9KkmS97CeisenD64U';
+      const myRange = 'bingo-submissions!A1:E';
 
       /**
        *  On load, called to load the auth2 library and API client library.
@@ -105,8 +112,8 @@
        */
       function listMajors() {
         gapi.client.sheets.spreadsheets.values.get({
-          spreadsheetId: '1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgvE2upms',
-          range: 'Class Data!A2:E',
+            spreadsheetId: '1lLPYo2ysqbcNaocM2DRiwFf0SD9KkmS97CeisenD64U',
+          range: 'bingo-submissions!A1:E',
         }).then(function(response) {
           var range = response.result;
           if (range.values.length > 0) {
@@ -123,6 +130,26 @@
           appendPre('Error: ' + response.result.error.message);
         });
       }
+
+      function addSubmition(mySpreadsheetId, values, myRange) {
+      var values = [values];
+        var body = {
+        values: values
+        };
+        gapi.client.sheets.spreadsheets.values.append({
+        spreadsheetId: mySpreadsheetId,
+        range: myRange,
+        valueInputOption: "USER_ENTERED",
+        resource: body
+        }).then((response) => {
+        var result = response.result;
+        console.log(`${result.updatedCells} cells updated.`,values);
+        });
+    }
+
+    sumbit.onclick = () => {
+        addSubmition(mySpreadsheetId, [one.value,two.value], myRange)
+    }
 
     </script>
 
