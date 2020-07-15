@@ -77,7 +77,7 @@ footer {
 		&:nth-child(1) {
 			display: block;
 		}
-		@media screen and (max-width: 600px) {
+		@media screen and (max-width: 300px) {
 			&:nth-child(1) {
 				display: none;
 			}
@@ -161,7 +161,7 @@ footer {
 	}
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 300px) {
 	.main-content {
 		max-width: none;
 		margin: 0;
