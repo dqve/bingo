@@ -5,3 +5,4 @@ Todo:
  - [x] Create company specific version
  - [x] Connect to Google APIs
  - [x] Restrict sheets access to authorized users
+ - [ ] Add "how to play" section
