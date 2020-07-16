@@ -66,6 +66,12 @@ footer a .icons {
   overflow: hidden;
 }
 
+main {
+  display: none;
+  -webkit-transition: 20s ease-in;
+  transition: 20s ease-in;
+}
+
 @media screen and (min-width: 601px) {
   .name {
     margin: 5% 30%;
@@ -294,5 +300,71 @@ footer a .icons {
     left: 10px;
     border: 2px dashed #6ae0c7;
   }
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.loader {
+  text-transform: uppercase;
+  font-family: 'gilroy', sans-serif;
+  font-weight: bold;
+  letter-spacing: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: transparent;
+}
+
+.loader::before {
+  content: 'e4e Bingo! Remote work edition !! .....';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #1cb8ab;
+  overflow: hidden;
+  border-right: 1px solid #000;
+  white-space: nowrap;
+  -webkit-animation: type 5s  infinite;
+          animation: type 5s  infinite;
+}
+
+@-webkit-keyframes type {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+#authorize_button {
+  background-color: #1cb8ab;
+  border: 2px dotted #1cb8ab;
 }
 /*# sourceMappingURL=style.css.map */
