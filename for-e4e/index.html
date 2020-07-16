@@ -6,12 +6,27 @@
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Nunito|Caveat+Brush" rel="fonts">
   <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Nunito|Caveat+Brush" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="modal.css">
   <title>Bingo</title>
 </head>
-<body>
-  <div class="main-content">
+<body onload="">
+ 
+  <loader id="loader" class="loader"> e4e Bingo! not the dog, the game !! </loader>
+    <div id="id01" class="w3-modal">
+      <div class="w3-modal-content">
+        <div class="w3-container">
+          <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+          <div><br><br></div>
+          <p>Please sign in with an e4e/gmail account to play.</p><br><br>
+          <button id="authorize_button" class="w3-button w3-light-blue">Sign in</button>
+          <br><br>
+        </div>
+      </div>
+    </div>
+  <main>
+  <div id="main-content" class="main-content">
     <div class="name">
       
       <label for="myname">Enter your name here:</label>
@@ -53,7 +68,7 @@
       <p>An image of your selections has been generated and saved unto your device, feel free to share on the game channel.</p>
       <p>Kindly resist all temptations to play again, I know it's hard, I pray you recieve strength.</p>
       <p>Cheers !</p>
-      <div id="close">close</div>
+      <span class="w3-display-topright" id="close">X</span>
     </div>
     
   </div>
@@ -63,6 +78,7 @@
     <div class="save-button"> Save </div>
     <div class="clear-button">Clear board</div>
   </aside>
+  </main>
   <!-- <footer>Made with love by David Ayọ</footer> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
