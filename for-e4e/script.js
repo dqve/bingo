@@ -64,7 +64,7 @@ function downloadURI(uri, name) {
 function download(){
     html2canvas(document.querySelector("body"), backgroundColor="null").then(canvas => {
     image = canvas.toDataURL("image/png");
-    downloadURI("data:" + image, "my-card.png");
+    downloadURI("data:" + image, "my-bingo-card.png");
 });
 }
 
