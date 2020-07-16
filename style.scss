@@ -108,7 +108,7 @@ footer {
 		line-height: 1.35;
 		user-select: none;
 		&:after {
-			content: "-";
+			content: "x";
 			position: absolute;
 			top: -28%;
 			left: -30%;
@@ -120,7 +120,7 @@ footer {
 			pointer-events: none;
 			font: 280px/0.5 "Caveat Brush", cursive;
 			text-align: center;
-			transform: rotate(-45deg);
+			transform: rotate(0deg);
 		}
 		&.active:after {
 			height: 100%;
