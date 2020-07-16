@@ -72,6 +72,7 @@ function download(){
 
 function hider(){
   var nameSection = document.querySelector(".name")
+  var foot = document.querySelector("footer")
   var bottomSection = document.querySelector("aside")
   var picHeader = document.createElement("h1")
   picHeader.style.color = '#198b85'
@@ -79,6 +80,8 @@ function hider(){
   nameSection.innerHTML = ""
   nameSection.appendChild(picHeader)
   bottomSection.style.display = 'none'
+  foot.style.visibility = "hidden"
+  body.children[3].visibility = "hidden"
 }
 
 
