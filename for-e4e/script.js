@@ -17,6 +17,27 @@ $('.clear-button').on('click', function(){
 
 
 
+/*
+*
+**
+** Section: loader section
+**
+*
+*/
+
+var pager
+
+function loader() {
+    pager = setTimeout(showPage, 1000);
+}
+
+function showPage() {
+    document.getElementById("loader").style.display = "none";
+    document.getElementsByTagName("main")[0].style.display = "block";
+}
+
+
+
 
 /*
 *
@@ -138,7 +159,7 @@ function createModal(container) {
     close: close   
   };
   
-  body.removeChild(container);
+  body.children[2].removeChild(container);
     
   function onClick() {
     
@@ -199,7 +220,8 @@ var SCOPES = "https://www.googleapis.com/auth/spreadsheets";
 
 const mySpreadsheetId = '1lLPYo2ysqbcNaocM2DRiwFf0SD9KkmS97CeisenD64U';
 const myRange = 'bingo-submissions!A1:E';
-
+var authorizeButton = document.getElementById('authorize_button');
+var authorizeModal= document.getElementById('id01');
 
 
 /**
@@ -207,6 +229,23 @@ const myRange = 'bingo-submissions!A1:E';
  */
 function handleClientLoad() {
   gapi.load('client:auth2', initClient);
+}
+
+
+/** 
+ *  Called when the signed in status changes, to update the UI
+ *  appropriately. After a sign-in, the API is called.
+ */
+function updateSigninStatus(isSignedIn) {
+  console.clear()
+  if (isSignedIn) {
+    loader()
+    console.log("GAPI client loaded for API");
+    authorizeModal.style.display = 'none';
+  } else {
+    authorizeModal.style.display = 'block';
+    console.error("Error loading GAPI client for API", err);
+  }
 }
 
 /**
@@ -224,25 +263,13 @@ function initClient() {
     gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
 
     // Handle the initial sign-in state.
+    authorizeButton.onclick = handleAuthClick;
     updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
   }, function(error) {
     console.log(JSON.stringify(error, null, 2));
   });
 }
 
-/** 
- *  Called when the signed in status changes, to update the UI
- *  appropriately. After a sign-in, the API is called.
- */
-function updateSigninStatus(isSignedIn) {
-  console.clear()
-  if (isSignedIn) {
-    
-    console.log("GAPI client loaded for API");
-  } else {
-    console.error("Error loading GAPI client for API", err);
-  }
-}
 
 /**
  *  Sign in the user upon button click.
@@ -298,8 +325,6 @@ savebtn.onclick = () => {
     console.log(result);
   }
 }
-
-
 
 
   /*
