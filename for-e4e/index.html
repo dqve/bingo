@@ -11,20 +11,20 @@
   <link rel="stylesheet" href="modal.css">
   <title>Bingo</title>
 </head>
-<body onload="">
+<body  onload="howToPlay()">
  
   <loader id="loader" class="loader"> e4e Bingo! not the dog, the game !! </loader>
-    <div id="id01" class="w3-modal">
-      <div class="w3-modal-content">
-        <div class="w3-container">
-          <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
-          <div><br><br></div>
-          <p>Please sign in with an e4e/gmail account to play.</p><br><br>
-          <button id="authorize_button" class="w3-button">Sign in</button>
-          <br><br>
-        </div>
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content">
+      <div class="w3-container">
+        <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+        <div><br><br></div>
+        <p>Please sign in with an e4e/gmail account to play.</p><br><br>
+        <button id="authorize_button" class="w3-button">Sign in</button>
+        <br><br>
       </div>
     </div>
+  </div>
   <main>
   <div id="main-content" class="main-content">
     <div class="name">
@@ -55,26 +55,43 @@
   </div>
 
   
-<section id="modal-1" class="modal-container">
-  
-  <div class="modal-dialog">    
-    <svg class="modal-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
-      <polygon class="modal-polygon" />
-    </svg>
+  <section id="modal-1" class="modal-container">
     
-    <div class="modal-content">
-      <h2>HOORAY!!! 🎉🎉🎉🎉</h2>
-      <p>You have completed this round of the e4e remote-edition bingo game !!</p>
-      <p>An image of your bingo card has been generated and saved unto your device, feel free to share on the game channel.</p>
-      <p>Kindly resist all temptations to play again, I know it's hard, I pray you recieve strength.</p><br>
-      <p>Happy Anniversary</p>
-      <p>Cheers !</p>
-      <span class="w3-display-topright" id="close">X</span>
+    <div class="modal-dialog">    
+      <svg class="modal-svg" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <polygon class="modal-polygon" />
+      </svg>
+      
+      <div class="modal-content">
+        <h2>HOORAY!!! 🎉🎉🎉🎉</h2>
+        <p>You have completed this round of the e4e remote-edition bingo game !!</p>
+        <p>An image of your bingo card has been generated and saved unto your device, feel free to share on the game channel.</p>
+        <p>Kindly resist all temptations to play again, I know it's hard, I pray you recieve strength.</p><br>
+        <p>Happy Anniversary</p>
+        <p>Cheers !</p>
+        <span class="w3-display-topright" id="close">X</span>
+      </div>
+      
     </div>
-    
+  </section>
+<div id="id02" class="w3-modal">
+  <div class="w3-modal-content">
+    <div class="w3-container">
+      <span onclick="document.getElementById('id02').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+      <div><br><br></div>
+      <h3>How to play:</h3>
+      <li>Below is a list of items (realities, activities, occurrences, behaviours etc) that most ehealthers relate to</li>
+      <li>Read through the board and click on each item that relates to you</li>
+      <li>Click on the "Save" button when you are thoroughly satisfied with your selection</li>
+      <li>Click on the "Clear board" button to clear your current selection and start again</li>
+      <li>Players are only allowed one save per game</li>
+      <br>
+      <button onclick="document.getElementById('id02').style.display='none'" class="w3-button authorize_button">START</button>
+      <br>
+      <br><br>
+    </div>
   </div>
-</section>
-
+</div>
   <aside class="context">
     <div class="save-button"> Save </div>
     <div class="clear-button">Clear board</div>
@@ -85,7 +102,24 @@
       <img src="logo.svg" alt="Ayọ's logo" class="img-fluid">
      </a>
   </footer>
+  <script>
+    /*
+    *
+    **
+    ** Section: How to play modal
+    **
+    *
+    */
+    var howto
 
+    function showHowTo() {
+      document.getElementById("id02").style.display = "block";
+    }
+
+    function howToPlay() {
+        howto = setTimeout(showHowTo, 2500);
+    }
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js"></script>
