@@ -45,7 +45,8 @@
 }
 
 #close{
+  font-size: large;
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 50%;
+  right: 50%;
 }
