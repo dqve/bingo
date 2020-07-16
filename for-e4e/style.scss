@@ -50,9 +50,7 @@ footer {
 		display: inline-block;
 		width: 45px;
 		height: 45px;
-		border-radius: 50%;
 		background: transparent;
-		border: 1px dashed #333;
 		color: #333;
 		margin: 5px;
 		&:hover {
@@ -97,7 +95,7 @@ main{
 		}
 	}
 }
-@media screen and (min-width: 301px) and (max-width: 600px){
+@media screen and (min-width: 350px) and (max-width: 600px){
 	.name{
 		margin: 5% 25%;
 		label{
@@ -116,7 +114,7 @@ main{
 		}
 	}
 }
-@media screen and (max-width: 300px){
+@media screen and (max-width: 349px){
 	.name{
 		margin: 15% 15%;
 		label{
@@ -148,7 +146,7 @@ main{
 		&:nth-child(1) {
 			display: block;
 		}
-		@media screen and (max-width: 300px) {
+		@media screen and (max-width: 349px) {
 			&:nth-child(1) {
 				display: none;
 			}
@@ -245,7 +243,7 @@ main{
 	}
 }
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 349px) {
 	.main-content {
 		max-width: none;
 		margin: 0;
@@ -331,6 +329,6 @@ main{
 
 
 #authorize_button{
-	background-color: #1cb8ab;
-	border: 2px dotted #1cb8ab;
+	background-color: $green-dark;
+	border: 2px dotted $green;
   }
