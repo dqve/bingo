@@ -361,7 +361,7 @@ main {
   }
 }
 
-#authorize_button {
+.authorize_button {
   background-color: #6ae0c7;
   border: 2px dotted #0dc4ab;
 }
