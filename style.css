@@ -127,7 +127,7 @@ footer a .icons {
 }
 
 .bingo-card__item:after {
-  content: "-";
+  content: "x";
   position: absolute;
   top: -28%;
   left: -30%;
@@ -140,8 +140,8 @@ footer a .icons {
   pointer-events: none;
   font: 280px/0.5 "Caveat Brush", cursive;
   text-align: center;
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
 }
 
 .bingo-card__item.active:after {
