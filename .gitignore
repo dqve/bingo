@@ -1,1 +1,12 @@
+#modules
 node_modules
+
+#un-minified styles
+for-e4e/styles/confetti.css
+for-e4e/styles/confetti.css.map
+for-e4e/styles/confetti.scss
+for-e4e/styles/modal.css
+for-e4e/styles/style.css.map
+for-e4e/styles/style.scss
+for-e4e/scripts/confetti.js
+for-e4e/scripts/script.js
