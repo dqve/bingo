@@ -8,7 +8,8 @@
 
 $(".bingo-card__item").on('click', function() {
   $(this).toggleClass('active');
-  console.log("click")
+  var arrayEmoji = ["👀","🙌","🎉","🤔","🤷","😂","😅","💜","💕"]
+  console.log(arrayEmoji[Math.floor(Math.random()*arrayEmoji.length)])
 })
 
 $('.clear-button').on('click', function(){
