@@ -1,0 +1,372 @@
+@import url("https://fonts.googleapis.com/css?family=Amatic+SC:700|Nunito|Caveat+Brush");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background: #f8f8f8;
+  font-family: "Nunito", sans-serif;
+}
+
+aside.context {
+  text-align: center;
+  color: #333;
+  line-height: 1.7;
+}
+
+aside.context a {
+  text-decoration: none;
+  color: #333;
+  padding: 3px 0;
+  border-bottom: 1px dashed;
+}
+
+aside.context a:hover {
+  border-bottom: 1px solid;
+}
+
+aside.context .explanation {
+  max-width: 700px;
+  margin: 4em auto 0;
+}
+
+footer {
+  text-align: center;
+  margin: 3em auto;
+  width: 100%;
+}
+
+footer a {
+  text-decoration: none;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  background: transparent;
+  color: #333;
+  margin: 5px;
+}
+
+footer a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+footer a .icons {
+  margin-top: 12px;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.main-content {
+  max-width: 600px;
+  width: 100%;
+  margin: 4em auto 0;
+  overflow: hidden;
+}
+
+main {
+  display: none;
+  -webkit-transition: 20s ease-in;
+  transition: 20s ease-in;
+}
+
+@media screen and (min-width: 601px) {
+  .name {
+    margin: 5% 30%;
+  }
+  .name label {
+    font: 700 20px 'Nunito', sans-serif;
+    padding: 1em;
+    margin-bottom: 1em;
+    color: #198b85;
+  }
+  .name input {
+    width: 12em;
+    height: 2em;
+    border: 2px dotted;
+    color: #198b85;
+    font: 700 20px 'Nunito', sans-serif;
+    text-orientation: center;
+  }
+}
+
+@media screen and (min-width: 350px) and (max-width: 600px) {
+  .name {
+    margin: 5% 25%;
+  }
+  .name label {
+    font: 700 20px 'Nunito', sans-serif;
+    padding: 1em;
+    margin-bottom: 1em;
+    color: #198b85;
+  }
+  .name input {
+    width: 12em;
+    height: 2em;
+    border: 2px dotted;
+    color: #198b85;
+    font: 700 20px 'Nunito', sans-serif;
+    text-orientation: center;
+  }
+}
+
+@media screen and (max-width: 349px) {
+  .name {
+    margin: 15% 15%;
+  }
+  .name label {
+    font: 700 20px 'Nunito', sans-serif;
+    padding: 1em;
+    margin-bottom: 1em;
+    color: #198b85;
+  }
+  .name input {
+    width: 12em;
+    height: 2em;
+    border: 2px dotted;
+    color: #198b85;
+    font: 700 20px 'Nunito', sans-serif;
+    text-orientation: center;
+  }
+}
+
+.title {
+  background: #198b85;
+  color: #fff;
+  padding: 30px 10px;
+  grid-column: span 5;
+  text-align: center;
+  font: 72px/0.9 "Amatic SC", cursive;
+}
+
+.title span {
+  display: none;
+}
+
+.title span:nth-child(1) {
+  display: block;
+}
+
+@media screen and (max-width: 349px) {
+  .title span:nth-child(1) {
+    display: none;
+  }
+  .title span:nth-child(2) {
+    display: block;
+  }
+}
+
+.bingo-card {
+  background: #6ae0c7;
+  padding: 10px;
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 3px;
+  -ms-grid-rows: (120px)[5];
+      grid-template-rows: repeat(5, 120px);
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  text-transform: uppercase;
+}
+
+.bingo-card__item {
+  background: #1cb8ab;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  cursor: pointer;
+  font-size: 12px;
+  line-height: 1.35;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.bingo-card__item:after {
+  content: "x";
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  color: #bdfffc;
+  width: 50%;
+  opacity: 0;
+  -webkit-transition: 0.1s ease;
+  transition: 0.1s ease;
+  height: 0;
+  pointer-events: none;
+  font: 100px/0.5 "Caveat Brush", cursive;
+  text-align: center;
+}
+
+.bingo-card__item.active:after {
+  height: 100%;
+  opacity: 0.7;
+}
+
+.bingo-card__item {
+  padding: 15px;
+}
+
+.bingo-card__item.active .bingo-card__checkbox:before {
+  content: "\2714";
+  position: absolute;
+  color: white;
+  left: 0;
+  top: -19px;
+  color: #198b85;
+  font: 30px "Caveat Brush", cursive;
+}
+
+.bingo-card__checkbox {
+  display: none;
+}
+
+.clear-button {
+  margin: 2em 0 0;
+  font: 700 16px 'Nunito', sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  border: 2px dotted;
+  color: #198b85;
+  padding: 8px 10px;
+}
+
+.clear-button:hover {
+  color: #1fc0ab;
+}
+
+.save-button {
+  margin: 2em 0 0;
+  font: 700 16px 'Nunito', sans-serif;
+  text-transform: uppercase;
+  cursor: pointer;
+  display: inline-block;
+  border: 2px dotted;
+  color: #198b85;
+  padding: 8px 10px;
+}
+
+.save-button:hover {
+  color: #1fc0ab;
+}
+
+@media screen and (max-width: 349px) {
+  .main-content {
+    max-width: none;
+    margin: 0;
+  }
+  .title {
+    font: 50px/0.9 "Amatic SC", cursive;
+    padding: 20px;
+  }
+  .bingo-card {
+    -ms-grid-rows: (auto)[24];
+        grid-template-rows: repeat(24, auto);
+    -ms-grid-columns: auto;
+        grid-template-columns: auto;
+    margin: 1em;
+  }
+  .bingo-card__item {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding: 15px 15px 15px 40px;
+    text-align: left;
+  }
+  .bingo-card__item:after {
+    content: "";
+    opacity: 0;
+  }
+  .bingo-card__item:nth-child(13) {
+    display: none;
+  }
+  .bingo-card__checkbox {
+    display: inline;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 10px;
+    border: 2px dashed #6ae0c7;
+  }
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.loader {
+  text-transform: uppercase;
+  font-family: 'gilroy', sans-serif;
+  font-weight: bold;
+  letter-spacing: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  color: transparent;
+}
+
+.loader::before {
+  content: 'e4e Bingo! Remote work edition !! .....';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #1cb8ab;
+  overflow: hidden;
+  border-right: 1px solid #000;
+  white-space: nowrap;
+  -webkit-animation: type 5s  infinite;
+          animation: type 5s  infinite;
+}
+
+@-webkit-keyframes type {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+@keyframes type {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+
+.authorize_button {
+  background-color: #6ae0c7;
+  border: 2px dotted #0dc4ab;
+}
+
+#link {
+  color: #6ae0c7;
+}
+/*# sourceMappingURL=style.css.map */
