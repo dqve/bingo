@@ -212,7 +212,7 @@ function createModal(container) {
   function open(r) {
     modal.isOpen = true;
     animation.play().timeScale(2);
-    modal.content.children[0].innerText = scoreChecker(r)
+    modal.content.children[0].innerHTML = scoreChecker(r)
   }
   
   function close() {
@@ -361,7 +361,6 @@ savebtn.onclick = () => {
   name = document.querySelector("#myname").value
   addSubmition(mySpreadsheetId, [name, r, selectedValues], myRange)
   modal.open(r)
-  gameScore.innerHTML = scoreChecker(r)
   hider()
   download()
   function successFunc(data) {
