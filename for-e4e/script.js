@@ -83,6 +83,33 @@ function hider(){
   body.children[3].visibility = "hidden"
 }
 
+/*
+*
+**
+** Section: Game logic 1
+**
+*
+*/
+
+function scoreChecker(score){
+
+  if (score >= 0 && score <= 10) {
+  return `Wow, you scored ${score}/40. <br> Are you sure you're experiencing the same remote work like the rest of us?`
+  }
+  else if (score >= 11 && score <= 20) {
+  return `Congrats! You scored ${score}/40. <br> You're only a half-blood. But that is good too. Keep saving lives!`
+  }
+  else if (score >= 21 && score <= 30) {
+  return `Congrats! You scored ${score}/40. <br> You almost aced it 🙌🏽. Keep saving lives!`
+  }
+  else if (score >= 31 && score <= 40) {
+  return `Well, well, well, you scored ${score}/40. <br> You're a true one. Keep saving lives!`
+  }
+  else{
+  return `HOORAY!!! 🎉🎉🎉🎉`
+  }
+}
+
 
 /*
 *
@@ -96,6 +123,7 @@ function hider(){
 var body = document.body;
 var modal = createModal(document.querySelector("#modal-1"));
 var openButton = document.querySelector("#open-button");
+let gameScore = document.querySelector("#modal-1 h4")
 
 function createModal(container) {
   
@@ -183,6 +211,7 @@ function createModal(container) {
   function open() {
     modal.isOpen = true;
     animation.play().timeScale(2);
+    gameScore.innerText = scoreChecker(r)
   }
   
   function close() {
@@ -224,6 +253,7 @@ const mySpreadsheetId = '1lLPYo2ysqbcNaocM2DRiwFf0SD9KkmS97CeisenD64U';
 const myRange = 'bingo-submissions!A1:E';
 var authorizeButton = document.getElementById('authorize_button');
 var authorizeModal= document.getElementById('id01');
+
 
 
 /**
@@ -312,33 +342,14 @@ var values = values;
 /*
 *
 **
-** Section: Game logic
+** Section: Game logic 2
 **
 *
 */
 
-function scoreChecker(score){
-
-  if (score >= 0 && score <= 10) {
-  return `Wow, you scored ${score}/40. <br> Are you sure you're experiencing the same remote work like the rest of us?`
-  }
-  else if (score >= 11 && score <= 20) {
-  return `Congrats! You scored ${score}/40. <br> You're only a half-blood. But that is good too. Keep saving lives!`
-  }
-  else if (score >= 21 && score <= 30) {
-  return `Congrats! You scored ${score}/40. <br> You almost aced it 🙌🏽. Keep saving lives!`
-  }
-  else if (score >= 31 && score <= 40) {
-  return `Well, well, well, you scored ${score}/40. <br> You're a true one. Keep saving lives!`
-  }
-  else{
-  return `HOORAY!!! 🎉🎉🎉🎉`
-  }
-}
-
 savebtn.onclick = () => {
   let active = document.querySelectorAll(".active")
-  let gameScore = document.querySelector("#modal-1 h4")
+
   let r = 0
   for(e of active){
     r = r + Number(e.getAttribute("weight"))
