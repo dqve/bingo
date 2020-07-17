@@ -1,0 +1,31 @@
+{
+  "name": "bingo",
+  "version": "1.2.0",
+  "description": "A bingo game, implemented using Javascript",
+  "main": "index.html",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dqve/bingo.git"
+  },
+  "keywords": [
+    "javascript",
+    "bingo",
+    "bingo-game",
+    "bingo-generator",
+    "bingo-board",
+    "bingo-cards",
+    "website"
+  ],
+  "author": "David Ayọ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dqve/bingo/issues"
+  },
+  "homepage": "https://github.com/dqve/bingo#readme",
+  "dependencies": {
+    "webpack": "^4.43.0"
+  }
+}
