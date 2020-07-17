@@ -211,7 +211,7 @@ function createModal(container) {
   function open(r) {
     modal.isOpen = true;
     animation.play().timeScale(2);
-    gameScore.innerText = scoreChecker(r)
+    modal.content.children[0].innerText = scoreChecker(r)
   }
   
   function close() {
