@@ -345,10 +345,11 @@ savebtn.onclick = () => {
     selected.push(e.querySelector(".question").innerHTML)
   }
   var selectedValues = selected.slice(0, selected.length - 1).join(', ') + ", and " + selected.slice(-1)
-  gameScore.innerHTML = scoreChecker(r)
+  
   name = document.querySelector("#myname").value
   addSubmition(mySpreadsheetId, [name, r, selectedValues], myRange)
   modal.open()
+  gameScore.innerHTML = scoreChecker(r)
   hider()
   download()
   function successFunc(data) {
