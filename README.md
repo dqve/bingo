@@ -2,6 +2,7 @@
 A bingo game implemetation in Javascript
 
 Todo:
+ - [ ] Develop PWA version
  - [ ] Make boards's dynamic
  - [ ] Add different board themes
  - [ ] Allow users to add spcific questions
