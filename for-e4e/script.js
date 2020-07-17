@@ -5,10 +5,10 @@
 **
 *
 */
+var arrayEmoji = ["🙌","🎉","💕","🤗","😊","🙂","🤓","🧡","💛","💚","💙","💜"]
 
 $(".bingo-card__item").on('click', function() {
   $(this).toggleClass('active');
-  var arrayEmoji = ["👀","🙌","🎉","🤔","🤷","😂","😅","💜","💕"]
   console.log(arrayEmoji[Math.floor(Math.random()*arrayEmoji.length)])
 })
 
@@ -93,16 +93,16 @@ function hider(){
 function scoreChecker(score){
 
   if (score >= 0 && score <= 10) {
-  return `Wow, you scored ${score}/40. <br> Are you sure you're experiencing the same remote work like the rest of us?`
+  return `Wow, you scored ${score}/40. ${arrayEmoji[Math.floor(Math.random()*arrayEmoji.length)]}<br> Are you sure you're experiencing the same remote work like the rest of us?`
   }
   else if (score >= 11 && score <= 20) {
-  return `Congrats! You scored ${score}/40. <br> You're only a half-blood. But that is good too. Keep saving lives!`
+  return `Congrats! You scored ${score}/40. ${arrayEmoji[Math.floor(Math.random()*arrayEmoji.length)]}<br> You're only a half-blood. But that is good too. Keep saving lives!`
   }
   else if (score >= 21 && score <= 30) {
-  return `Congrats! You scored ${score}/40. <br> You almost aced it 🙌🏽. Keep saving lives!`
+  return `Congrats! You scored ${score}/40. ${arrayEmoji[Math.floor(Math.random()*arrayEmoji.length)]}<br> You almost aced it 🙌🏽. Keep saving lives!`
   }
   else if (score >= 31 && score <= 40) {
-  return `Well, well, well, you scored ${score}/40. <br> You're a true one. Keep saving lives!`
+  return `Well, well, well, you scored ${score}/40. ${arrayEmoji[Math.floor(Math.random()*arrayEmoji.length)]}<br> You're a true one. Keep saving lives!`
   }
   else{
   return `HOORAY!!! 🎉🎉🎉🎉`
@@ -361,6 +361,7 @@ savebtn.onclick = () => {
   modal.open(r)
   hider()
   download()
+  confetti()
   function successFunc(data) {
     console.log(result);
   }
