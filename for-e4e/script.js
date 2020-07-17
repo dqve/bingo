@@ -305,10 +305,7 @@ var values = values;
   }).then((response) => {
   var result = response.result;
   console.log(`${result.updatedCells} cells updated.`,values);
-  modal.open();
   selected = []
-  hider()
-  download()
   });
 }
 
@@ -351,6 +348,9 @@ savebtn.onclick = () => {
   gameScore.innerHTML = scoreChecker(r)
   name = document.querySelector("#myname").value
   addSubmition(mySpreadsheetId, [name, r, selectedValues], myRange)
+  modal.open()
+  hider()
+  download()
   function successFunc(data) {
     console.log(result);
   }
