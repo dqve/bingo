@@ -65,6 +65,7 @@ function download(){
     html2canvas(document.querySelector("body"), backgroundColor="null").then(canvas => {
     image = canvas.toDataURL("image/png");
     downloadURI("data:" + image, "my-bingo-card.png");
+    
 });
 }
 
@@ -311,15 +312,43 @@ var values = values;
   });
 }
 
+/*
+*
+**
+** Section: Game logic
+**
+*
+*/
+
+function scoreChecker(score){
+
+  if (score >= 0 && score <= 10) {
+  return `Wow, you scored ${score}/40. Are you sure you're experiencing the same remote work like the rest of us?`
+  }
+  else if (score >= 11 && score <= 20) {
+  return `Congrats! You scored ${score}/40. You're only a half-blood. But that is good too. Keep saving lives!`
+  }
+  else if (score >= 21 && score <= 30) {
+  return `Congrats! You scored ${score}/40. You almost aced it 🙌🏽. Keep saving lives!`
+  }
+  else if (score >= 31 && score <= 40) {
+  return `Well, well, well, you scored ${score}/40. You're a true one. Keep saving lives!`
+  }
+  else{
+  return `HOORAY!!! 🎉🎉🎉🎉`
+  }
+}
+
 savebtn.onclick = () => {
   let active = document.querySelectorAll(".active")
+  let gameScore = document.querySelector("#game-score")
   let r = 0
   for(e of active){
     r = r + Number(e.getAttribute("weight"))
     selected.push(e.querySelector(".question").innerHTML)
   }
   var selectedValues = selected.slice(0, selected.length - 1).join(', ') + ", and " + selected.slice(-1)
-
+  gameScore.innerHTML = scoreChecker(r)
   name = document.querySelector("#myname").value
   addSubmition(mySpreadsheetId, [name, r, selectedValues], myRange)
   function successFunc(data) {
@@ -327,37 +356,4 @@ savebtn.onclick = () => {
   }
 }
 
-
-  /*
-  *
-  *Adds single row to spreadsheet using sheetsu
-  *
-  * 
-  var data = {
-    name: name,
-    weight: r,
-    selected: selected
-  };
-  Sheetsu.write("https://sheetsu.com/apis/v1.0bu/ff26f7713e1e", data, {}, successFunc);
-
-  console.log(r, name, selected)
-  selected = []
-}
-
-
-    function saveData() {
-      var first_name = document.getElementsByName("first_name")[0].value,
-        score = document.getElementsByName("score")[0].value;
-      var data = {
-        name: first_name,
-        score: score
-      }
-      Sheetsu.write("https://sheetsu.com/apis/v1.0bu/579f464cd062", data, {}, function (result) {
-        console.log(result);
-      })
-    }
-    document.querySelector("#myForm").addEventListener("submit", function (e) {
-      e.preventDefault();
-      saveData();
-    })
-  */
+//selected
