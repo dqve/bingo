@@ -6,5 +6,5 @@ Todo:
  - [x] Connect to Google APIs
  - [x] Restrict sheets access to authorized users
  - [x] Add "how to play" section
- - [x] Add celebration play
- - [x] Fix Safari bug
+ - [ ] Add celebration play
+ - [ ] Fix Safari bug
