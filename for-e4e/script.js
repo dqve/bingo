@@ -16,8 +16,6 @@ $('.clear-button').on('click', function(){
 	$('.bingo-card__item').removeClass('active');
 })
 
-
-
 /*
 *
 **
