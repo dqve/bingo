@@ -56,7 +56,7 @@ function downloadURI(uri, name) {
     link.href = uri;
     document.body.appendChild(link);
     link.click();
-    console.log("done")   
+    console.log("image downloaded")   
     //after creating link you should delete dynamic link
     //clearDynamicLink(link); 
 }
