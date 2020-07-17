@@ -341,7 +341,7 @@ function scoreChecker(score){
 
 savebtn.onclick = () => {
   let active = document.querySelectorAll(".active")
-  let gameScore = document.querySelector("#game-score")
+  let gameScore = document.querySelector("#modal-1 h4")
   let r = 0
   for(e of active){
     r = r + Number(e.getAttribute("weight"))
