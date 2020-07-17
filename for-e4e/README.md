@@ -5,4 +5,6 @@ Todo:
  - [x] Create company specific version
  - [x] Connect to Google APIs
  - [x] Restrict sheets access to authorized users
- - [ ] Add "how to play" section
+ - [x] Add "how to play" section
+ - [ ] Add celebration play
+ - [ ] Fix Safari bug
