@@ -65,7 +65,7 @@ function download(){
     html2canvas(document.querySelector("body"), backgroundColor="null").then(canvas => {
     image = canvas.toDataURL("image/png");
     downloadURI("data:" + image, "my-bingo-card.png");
-    
+    FEATURES.SUPPORT_RANGE_BOUNDS = false
 });
 }
 
