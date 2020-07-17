@@ -1,4 +1,4 @@
-# bingo
+# Quarantine Bingo
 A bingo game implemetation in Javascript
 
 Todo:
