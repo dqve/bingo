@@ -7,5 +7,5 @@ Todo:
  - [x] Restrict sheets access to authorized users
  - [x] Add "how to play" section
  - [x] Add Scoring logic
- - [ ] Add celebration play
+ - [x] Add celebration play
  - [ ] Fix Safari bug
