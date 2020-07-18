@@ -16,7 +16,7 @@ Todo:
  - [ ] Make a real README
 
 Advanced Todo:
- - [ ] Create cross-platform mobile game
+ - [ ] Create all-platform game
  - [ ] Create iMessage version
  
 
