@@ -1,5 +1,5 @@
 # e4e bingo
-E4E Anniversary [bingo game app](https://dqve.github.io/bingo/for-e4e)
+E4E Anniversary [bingo game app](https://qbingo.netlify.app/for-e4e/)
 
 Todo:
  - [x] Create company specific version
