@@ -4,7 +4,8 @@
   "description": "A bingo game, implemented using Javascript",
   "main": "index.html",
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
   },
   "homepage": "https://github.com/dqve/bingo#readme",
   "dependencies": {
-    "webpack": "^4.43.0"
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12"
   }
 }
