@@ -1,5 +1,5 @@
 {
-  "name": "bingo",
+  "name": "qbingo",
   "version": "1.2.0",
   "description": "A bingo game, implemented using Javascript",
   "main": "index.html",
