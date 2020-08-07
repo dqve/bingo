@@ -18,8 +18,6 @@ Todo:
 Advanced Todo:
  - [ ] Create all-platform game
  - [ ] Create iMessage version
- 
-
 
 <hr>
 This project is open for contributions ☺️,
